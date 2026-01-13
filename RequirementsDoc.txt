@@ -1,0 +1,402 @@
+1. Introduction
+
+    Purpose: Simple and effective way to plan and track finances and expenses
+    
+    Intended Audience: Myself and anyone who wants to manage their finances and expenses
+
+
+2. Functional Requirements (What the software does)
+
+    // User Authentication
+
+    US-01: As a user, I must be able to create an account using my email and password, so that my finances and expenses and tracked and only viewable by me.
+
+        Given: The user has provided their email and password
+
+        FR-01.1: The system shall create a new account for the user
+        FR-01.2: The system shall redirect the user to the login page if the account is created successfully
+        FR-01.3: The system shall display a message to the user if the email is already in use
+    
+    US-02: As a user, I must be able to login to the system using my email and password, so that I can view my account details, plan my finances and expenses, and track my finances and expenses.
+
+        Given: The user has created an account and provided their email and password
+
+        FR-02.1: The system shall validate the email and password entered by the user
+        FR-02.2: The system shall redirect the user to the home page if the email and password are correct
+        FR-02.3: The system shall display a message to the user if the email or password is incorrect
+
+    US-03: As a user, I must be able to logout of the system, so that my account is protected and my finances and expenses are not accessible to other users.
+
+        Given: The user is logged in to the system
+
+        FR-03.1: The system shall redirect the user to the login page if the user logs out successfully
+        FR-03.2: The system shall display a message to the user upon logout
+
+    // Account details
+
+    US-04: As a user, I must be able to view my financial accounts on the homepage, so I can see my current balances when I login to my account.
+
+        Given: The user is logged in to the system
+
+        FR-04.1: The system shall display the user's financial accounts on the homepage
+        FR-04.2: The system shall display the current balances of the user's financial accounts
+        FR-04.3: The system shall display when the accounts were last updated
+
+    US-05: As a user, I must be able to add a new financial account, so I can track my finances and expenses for that account.
+
+        Given: The user is logged in to the system, and the select the "Add Account" button on the homepage
+
+        FR-05.1: The system shall display a form for the user to add a new financial account
+        FR-05.2: The system shall display a message to the user if the account is added successfully
+        FR-05.3: The system shall display a message to the user if the account is not added successfully
+
+    US-06: As a user, I must be able to edit a financial account, so I can update the account details and balances if needed.
+
+        Given: The user is logged in to the system, and the selects the "Edit Account" button on the homepage
+
+        FR-06.1: The system shall display a form for the user to edit the financial account
+        FR-06.2: The system shall display a message to the user if the account is edited successfully
+        FR-06.3: The system shall display a message to the user if the account is not edited successfully
+
+    US-07: As a user, I must be able to delete a financial account, so I can remove an account from my account list.
+
+        Given: The user is logged in to the system, and the selects the "Delete Account" button on the homepage
+
+        FR-07.1: The system shall display a confirmation dialog to the user asking if they are sure they want to delete the account
+        FR-07.2: The system shall display a message to the user if the account is deleted successfully
+        FR-07.3: The system shall display a message to the user if the account is not deleted successfully
+
+    US-08: As a user, I must be able to see the total balance of all my financial accounts, so I can see my overall financial situation.
+
+        Given: The user is logged in to the system and on the homepage
+
+        FR-08.1: The system shall display the total balance of all the user's financial accounts
+
+    US-09: As I user, I must be able to see the projected total balance of all my financial accounts, taking into account my planned income and outgoings, so that I have an idea of my future financial picture
+
+        Given: The user is logged in to the system and on the homepage
+
+        FR-09.1: The system shall display the projected total balance of all the user's financial accounts
+
+    // Planned Income and Outgoings
+
+    US-10: As a user, I must be able to add a planned income month or category, so that I can plan my finances and expenses for that month or category.
+
+        Given: The user is logged into the system, is on the income tab, and selects the "Add Income" button
+
+        FR-10.1: The system shall display a form for the user to add a planned income month or category
+        FR-10.2: The system shall display a message to the user if the income is added successfully
+        FR-10.3: The system shall display a message to the user if the income is not added successfully
+        FR-10.4: The system shall display the new income on a list in chronilogical order
+    
+    US-11: As a user, I must be able to edit a planned income month or category, so that I can update the income details if needed.
+
+        Given: The user is logged into the system, is on the income tab, and selects the "Edit Income" button
+
+        FR-11.1: The system shall display a form for the user to edit the planned income month or category
+        FR-11.2: The system shall display a message to the user if the income is edited successfully
+        FR-11.3: The system shall display a message to the user if the income is not edited successfully
+        FR-11.4: The system shall display the updated income on a list in chronilogical order
+
+    US-12: As a user, I must be able to delete a planned income month or category, so that I can remove an income from my planned income list.
+
+        Given: The user is logged into the system, is on the income tab, and selects the "Delete Income" button
+
+        FR-12.1: The system shall display a confirmation dialog to the user asking if they are sure they want to delete the income
+        FR-12.2: The system shall display a message to the user if the income is deleted successfully
+        FR-12.3: The system shall display a message to the user if the income is not deleted successfully
+        FR-12.4: The system shall display the deleted income on a list in chronilogical order
+
+    US-13: As a user, I must be able to see the total projected income for all my planned income months or categories, so that I can see my overall projected income picture.
+
+        Given: The user is logged into the system and is on the income tab
+
+        FR-13.1: The system shall display the total projected income for all my planned income months or categories
+
+    US-14: As a user, I must be able to add a planned outgoings month or category, so that I can plan my finances and expenses for that month or category.
+
+        Given: The user is logged into the system, is on the outgoings tab, and selects the "Add Outgoings" button
+
+        FR-14.1: The system shall display a form for the user to add the planned outgoings month or category
+        FR-14.2: The system shall display a message to the user if the outgoings are added successfully
+        FR-14.3: The system shall display a message to the user if the outgoings are not added successfully
+        FR-14.4: The system shall display the new outgoings on a list in chronilogical order
+
+    US-15: As a user, I must be able to edit a planned outgoings month or category, so that I can update the outgoings details if needed.
+
+        FR-15.1: The system shall display a form for the user to edit the planned outgoings month or category
+        FR-15.2: The system shall display a message to the user if the outgoings are edited successfully
+        FR-15.3: The system shall display a message to the user if the outgoings are not edited successfully
+        FR-15.4: The system shall display the updated outgoings on a list in chronilogical order
+
+    US-16: As a user, I must be able to delete a planned outgoings month or category, so that I can remove an outgoings from my planned outgoings list.
+
+        Given: The user is logged into the system, is on the outgoings tab, and selects the "Delete Outgoings" button
+
+        FR-16.1: The system shall display a confirmation dialog to the user asking if they are sure they want to delete the outgoings
+        FR-16.2: The system shall display a message to the user if the outgoings are deleted successfully
+        FR-16.3: The system shall display a message to the user if the outgoings are not deleted successfully
+        FR-16.4: The system shall display the deleted outgoings on a list in chronilogical order
+
+    US-17: As a user, I must be able to see the total projected outgoings for all my planned outgoings months or categories, so that I can see my overall projected outgoings picture.
+
+        Given: The user is logged into the system and is on the outgoings tab
+
+        FR-17.1: The system shall display the total projected outgoings for all my planned outgoings months or categories
+
+    // Budgeting
+
+    US-18: As a user, I must be able to create a budget for a month or category, so that I can track my finances and expenses for that month or category.
+
+        Given: The user is logged into the system, is on the budgeting tab, and selects an outgoings item from the dropdown menu
+
+        FR-18.1: The system shall prompt a new tab for the user to enter categories and amounts for the budget, counting down from the total projected outgoings for the month or category
+        FR-18.2: The system shall display a message to the user if the budget is created successfully
+        FR-18.3: The system shall display a message to the user if the budget is not created successfully
+    
+    US-19: As a user, I must be able to edit a budget for a month or category, so that I can update the budget details if needed.
+
+        Given: The user is logged into the system, is on the budgeting tab, and selects "Edit Budget" button on an available budget
+
+        FR-19.1: The system shall prompt a new tab with the budget details for the user to edit
+        FR-19.2: The system shall display a message to the user if the budget is edited successfully
+        FR-19.3: The system shall display a message to the user if the budget is not edited successfully
+
+    US-20: As a user, I must be able to copy a budget for a month or category, so that I can create a new budget for a different month or category more easily and consistently.
+
+        Given: The user is logged into the system, is on the budgeting tab, and selects "Copy Budget" button on an available budget
+
+        FR-20.1: The system shall prompt a new tab with the copied budget details for the user to edit
+        FR-20.2: The system shall display a message to the user if the budget is created successfully
+        FR-20.3: The system shall display a message to the user if the budget is not created successfully
+
+    US-21: As a user, I must be able to delete a budget for a month or category, so that I can remove a budget from my budget list.
+
+        Given: The user is logged into the system, is on the budgeting tab, and selects "Delete Budget" button on an available budget
+
+        FR-21.1: The system shall display a confirmation dialog to the user asking if they are sure they want to delete the budget
+        FR-21.2: The system shall display a message to the user if the budget is deleted successfully
+        FR-21.3: The system shall display a message to the user if the budget is not deleted successfully
+
+    // Transaction (Expenses) Management
+
+    US-22: As a user, I must be able to view my transactions made towards a budget, so that I can see the transactions made towards the budget.
+
+        Given: The user is logged into the system, is on the transactions tab, and selects an available budget
+
+        FR-22.1: The system shall display a list of all the transactions made towards the budget
+        FR-22.2: The system shall display the transaction name, amount, and date of the transaction
+        FR-22.3: The system shall display the full transaction details in a modal when the user clicks on a transaction, such as payment method, category and category splits, and description
+
+    US-23: As a user, I must be able to add a transaction towards a budget, so that I can track my finances and expenses for that budget.
+
+        Given: The user is logged into the system, is on the transactions tab, and selects "Add Transaction" button on an available budget
+
+        FR-23.1: The system shall display a form for the user to add a transaction towards the budget
+        FR-23.2: The system shall display a message to the user if the transaction is added successfully
+        FR-23.3: The system shall display a message to the user if the transaction is not added successfully
+        FR-23.4: The system shall display the new transaction on a list in chronilogical order
+
+    US-24: As a user, I must be able to edit a transaction towards a budget, so that I can update the transaction details if needed.
+
+        Given: The user is logged into the system, is on the transactions tab, and selects "Edit Transaction" button on an available transaction
+
+        FR-24.1: The system shall display a form for the user to edit the transaction towards the budget
+        FR-24.2: The system shall display a message to the user if the transaction is edited successfully
+        FR-24.3: The system shall display a message to the user if the transaction is not edited successfully
+        FR-24.4: The system shall display the updated transaction on a list in chronilogical order
+
+    US-25: As a user, I must be able to delete a transaction towards a budget, so that I can remove a transaction from my transaction list.
+
+        Given: The user is logged into the system, is on the transactions tab, and selects "Delete Transaction" button on an available transaction
+
+        FR-25.1: The system shall display a confirmation dialog to the user asking if they are sure they want to delete the transaction
+        FR-25.2: The system shall display a message to the user if the transaction is deleted successfully
+        FR-25.3: The system shall display a message to the user if the transaction is not deleted successfully
+        FR-25.4: The system shall display the deleted transaction on a list in chronilogical order
+
+    US-26: As a user, I must be able to see the total amount of money spent towards a budget, so that I can see how much I have spent towards the budget.
+
+        Given: The user is logged into the system, is on the transactions tab, and selects an available budget
+
+        FR-26.1: The system shall display the total amount of money spent towards the budget
+
+    US-27: As a user, I must be able to see the total amount of money remaining in a budget, so that I can see how much I have left in the budget.
+
+        Given: The user is logged into the system, is on the transactions tab, and selects an available budget
+
+        FR-27.1: The system shall display the total amount of money remaining in the budget
+
+    US-28: As a user, I must be able to see the total amount of money spent towards a category of the budget, so that I can see how much I have spent towards that category.
+
+        Given: The user is logged into the system, is on the transactions tab, and selects an available budget
+
+        FR-28.1: The system shall display the total amount of money spent towards the category
+
+    US-29: As a user, I must be able to see the total amount of money remaining in a category of the budget, so that I can see how much I have left in that category.
+
+        Given: The user is logged into the system, is on the transactions tab, and selects an available budget
+
+        FR-29.1: The system shall display the total amount of money remaining in the category
+
+    US-30: As a user, I must be able to see the total amount of money spent using a specific payment method towards a budget, so that I can verify the total amount of money spent on it with my invoice or statement for that payment method
+
+        Given: The user is logged into the system, is on the transactions tab, and selects an available budget
+
+        FR-30.1: The system shall display the total amount of money spent using the specific payment method towards the budget
+
+    // Payment Methods
+
+    US-31: As a user, I must be able to view all of my forms of payment methods, so that I can see all of the payment methods I have used to pay for my expenses.
+
+        Given: The user is logged into the system, is on the payment methods tab
+
+        FR-31.1: The system shall display a list of all the payment methods the user has added to their account
+        FR-31.2: The system shall display the payment method name, due date (if applicable), and the total amount of money spent using that payment method
+        FR-31.3: The system shall display budgets and amount of money made from the payment method on the budgets, if the user clicks on the total amount of money spent using that payment method
+        FR-31.4: The system shall display the payment methods on a list in top to bottom order of most money spent using that payment method
+
+        
+    US-32: As a user, I must be able to add a new payment method, so that I can add a new payment method to my account.
+
+        Given: The user is logged into the system, is on the payment methods tab, and selects the "Add Payment Method" button
+
+        FR-32.1: The system shall display a form for the user to add a new payment method
+        FR-32.2: The system shall display a message to the user if the payment method is added successfully
+        FR-32.3: The system shall display a message to the user if the payment method is not added successfully
+
+    US-33: As a user, I must be able to edit a payment method, so that I can update the payment method details if needed.
+
+        Given: The user is logged into the system, is on the payment methods tab, and selects "Edit Payment Method" button on an available payment method
+
+        FR-33.1: The system shall display a form for the user to edit the payment method
+        FR-33.2: The system shall display a message to the user if the payment method is edited successfully
+        FR-33.3: The system shall display a message to the user if the payment method is not edited successfully
+
+    US-34: As a user, I must be able to delete a payment method, so that I can remove a payment method from my payment method list.
+
+        Given: The user is logged into the system, is on the payment methods tab, and selects "Delete Payment Method" button on an available payment method
+
+        FR-34.1: The system shall display a confirmation dialog to the user asking if they are sure they want to delete the payment method
+        FR-34.2: The system shall display a message to the user if the payment method is deleted successfully
+        FR-34.3: The system shall display a message to the user if the payment method is not deleted successfully
+
+    // Subscriptions
+
+    US-35: As a user, I must be able to view all of my subscriptions, so that I can see all of the subscriptions I have to pay for.
+
+        Given: The user is logged into the system, is on the subscriptions tab
+
+        FR-35.1: The system shall display a list of all the subscriptions the user has added to their account in a chronicalogical order of weekly, monthly, or yearly payment dates
+        FR-35.2: The system shall display the subscription name, payment date, and payment method used to pay the subscription
+
+    US-36: As a user, I must be able to add a new subscription, so that I can add a new subscription to my account.
+
+        Given: The user is logged into the system, is on the subscriptions tab, and selects the "Add Subscription" button
+
+        FR-36.1: The system shall display a form for the user to add a new subscription
+        FR-36.2: The system shall display a message to the user if the subscription is added successfully
+        FR-36.3: The system shall display a message to the user if the subscription is not added successfully
+
+    US-37: As a user, I must be able to edit a subscription, so that I can update the subscription details if needed.
+
+        Given: The user is logged into the system, is on the subscriptions tab, and selects "Edit Subscription" button on an available subscription
+
+        FR-37.1: The system shall display a form for the user to edit the subscription
+        FR-37.2: The system shall display a message to the user if the subscription is edited successfully
+        FR-37.3: The system shall display a message to the user if the subscription is not edited successfully
+
+    US-38: As a user, I must be able to delete a subscription, so that I can remove a subscription from my subscription list.
+
+        Given: The user is logged into the system, is on the subscriptions tab, and selects "Delete Subscription" button on an available subscription
+
+        FR-38.1: The system shall display a confirmation dialog to the user asking if they are sure they want to delete the subscription
+        FR-38.2: The system shall display a message to the user if the subscription is deleted successfully
+        FR-38.3: The system shall display a message to the user if the subscription is not deleted successfully
+
+    US-39: As a user, I must be able to see the total amount of money spent on all of my subscriptions, so that I can see how much I have spent on all of my subscriptions.
+
+        Given: The user is logged into the system and is on the subscriptions tab
+
+        FR-39.1: The system shall display the total amount of money spent on all of my subscriptions
+
+    US-40: As a user, I must be able to import my subscriptions into a budget and transactions, so that I can track my finances and expenses for my subscriptions more easily and simply.
+
+        Given: The user is logged into the system and is on the budgets tab in a selected budget, and clicks the import subscriptions button
+
+        FR-40.1: The system shall create a new subscriptions category in the budget, and add the total amount of money spent on all of my subscriptions to the category
+        FR-40.2: The system shall display a message to the user if the subscriptions are imported successfully
+        FR-40.3: The system shall display a message to the user if the subscriptions are not imported successfully
+
+        Given: The user is logged into the system and is on the transactions tab in a selected budget, and clicks the import subscriptions button
+
+        FR-40.4: The system shall create a new transaction for each subscription with all of the subscription details, such as payment method, category and category splits, and description
+        FR-40.5: The system shall display a message to the user if the subscriptions are imported successfully
+        FR-40.6: The system shall display a message to the user if the subscriptions are not imported successfully
+
+    // Account Logins
+
+    US-41: As a user, I must be able to keep track of all other accounts involving my finances and expenses, such as credit cards, loans, mortgages, and other accounts, so that I can see all of the accounts I have and the balances of each account.
+
+        Given: The user is logged into the system and is on the account logins tab
+
+        FR-41.1: The system shall display a list of all the financial accounts the user has added to their account
+        FR-41.2: The system shall display the account name, account type (credit card, loan, mortgage, or other), account balance, and a link to the account login page if the user clicks on the account name
+
+    US-42: As a user, I must be able to add a new financial account, so that I can add a new financial account to my account.
+
+        Given: The user is logged into the system and is on the account logins tab, and selects the "Add Account Login" button
+
+        FR-42.1: The system shall display a form for the user to add a new financial account
+        FR-42.2: The system shall display a message to the user if the account is added successfully
+        FR-42.3: The system shall display a message to the user if the account is not added successfully
+
+    US-43: As a user, I must be able to edit a financial account, so that I can update the financial account details if needed.
+
+        Given: The user is logged into the system and is on the account logins tab, and selects "Edit Account Login" button on an available financial account
+
+        FR-43.1: The system shall display a form for the user to edit the financial account
+        FR-43.2: The system shall display a message to the user if the account is edited successfully
+        FR-43.3: The system shall display a message to the user if the account is not edited successfully
+
+    US-44: As a user, I must be able to delete a financial account, so that I can remove a financial account from my financial account list.
+
+        Given: The user is logged into the system and is on the account logins tab, and selects "Delete Account Login" button on an available financial account
+
+        FR-44.1: The system shall display a confirmation dialog to the user asking if they are sure they want to delete the financial account
+        FR-44.2: The system shall display a message to the user if the account is deleted successfully
+        FR-44.3: The system shall display a message to the user if the account is not deleted successfully
+
+3. Non-Functional Requirements (How the software does it)
+    
+    // Security & Privacy
+
+    Encryption at Rest: All sensitive data such as passwords, account numbers, and other financial information will be encrypted in the database using AES-256 encryption.
+    
+    Encryption in Transit: The website must force HTTPS (TLS 1.2+) for all communications.
+
+    Authentication Security: Passwords must be hased using a slow-hashing algorithm like Argon2 or bcrypt.
+
+    Session Management: Sessions should have a short time (e.g., 15 minutes of inactivity) to prevent unauthorized access on shared computers
+
+    // Performance & Scalability
+    
+    Page Load Time: The dashoard should load in less than 3 seconds on a standard 4G/Broadband connection.
+
+    Database Indexing: Queries should be optimized to use indexes for common search and filter operations.
+
+    Reliability & Data Integrity: The database must support ACID properties. If a crash occurs, no unsaved data should be updated
+
+    Backups: The system should perform an automated database backup every 24 hours.
+
+    // Usability
+
+    User Interface: The interface should be intuitive and easy to use, with a clean and modern design.
+
+    Mobile Responsiveness: The website should be responsive and easy to use on mobile devices.
+
+4. System Architecture
+
+    // Tech Stack
+
+    Frontend:
