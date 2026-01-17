@@ -397,6 +397,51 @@
 
 4. System Architecture
 
-    // Tech Stack
+    // Architectural Overview
 
-    Frontend:
+    Presentation Layer (Frontend): Handle user interface and user experience
+
+    Logic Layer (Backend): Processs requests, enforces security, and manages data flow
+
+    Data Layer (Database): Handles persistent storage and data Integrity
+
+    // Component Breakdown
+
+    Presentation Layer (Frontend)
+    
+        Technologies: HTML, CSS, JavaScript
+
+        Role: Renders the UI and captures user input
+
+        Communication: Users the Fetech API to send asynchronous HTTP requests (GET, POST, etc.) to the Logic Layer
+
+    Logic Layer (Backend)
+
+        Technologies: Node.js with the Express.js library
+
+        Role: Acts as the "gatekeeper". Routes requests, validates user data, and contains business Logic
+
+        Security: Uses environment variables (.env) to store database credentials and uses CORS (Cross-Origin Resource Sharing) to control which domains can access the API
+
+    Data Layer (Database)
+
+        Technologies: PostgreSQL (hosted on a cloud provider like Neon or Supabase)
+
+        Role: Stores relational data in tables with defined schemas
+
+        Connection: Connects to the Logic Layer via a connection pool (using the pg library) over an encrypted SSL/TLS connection
+
+    // Security Architecture
+
+    Encryption: All data in transit between the Browser, Server, and Database must be encrypted via HTTPS (TLS 1.2+)
+
+    Authentication: Sensitive routes will be protected by JWT or Session cookies
+
+    Data Safety: SQL queries will use Parameterized Queries to prevent SQL injection attacks
+
+    Validation: All user input will be validated on the server side to prevent malicious data from being stored in the database
+
+    Logging: All critical errors will be logged to a file for audit purposes
+
+    Error Handling: All errors will be handled gracefully and user-friendly messages will be displayed
+
